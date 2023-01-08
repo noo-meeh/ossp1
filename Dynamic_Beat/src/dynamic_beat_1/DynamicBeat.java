@@ -1,6 +1,7 @@
 package dynamic_beat_1;
 
 public class DynamicBeat {
+	
 	// test 
-	//ÁÖ¼® Ãß°¡ 
+	// í…ŒìŠ¤íŠ¸  
 }
