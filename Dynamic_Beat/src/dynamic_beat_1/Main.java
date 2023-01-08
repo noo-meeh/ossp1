@@ -2,10 +2,14 @@ package dynamic_beat_1;
 
 public class Main {
 
+	public static final int SCREEN_WIDTH = 1280; // 넓이
+	public static final int SCREEN_HEIGHT = 720; // 높이
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("gello");
-		//테스트 주석 
+		
+		
+		new DynamicBeat();
+		
 	}
 
 }
