@@ -33,6 +33,9 @@ public class DynamicBeat extends JFrame {
 		add(menuBar);
 
 		exitButton.setBounds(50, 50, 30, 30);
+		//exitButton.setBorderPainted(false);
+		//exitButton.setContentAreaFilled(false);
+		//exitButton.setFocusPainted(false);
 		add(exitButton);
 
 		Music introMusic = new Music("introMusic.mp3", true);
