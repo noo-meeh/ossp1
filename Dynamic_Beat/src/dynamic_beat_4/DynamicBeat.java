@@ -1,6 +1,7 @@
 package dynamic_beat_4;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
@@ -47,16 +48,18 @@ public class DynamicBeat extends JFrame {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				exitButton.setIcon(exitButtonEnteredImage);
+				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				exitButton.setIcon(exitButtonBasicImage);
+				exitButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
 				System.exit(0);
 			}
-		});
+		});		
 		add(exitButton);
 		
 		menuBar.setBounds(0, 0, 1280, 30);
@@ -72,7 +75,7 @@ public class DynamicBeat extends JFrame {
 			public void mouseDragged(MouseEvent e) {
 				int x = e.getXOnScreen();
 				int y = e.getXOnScreen();
-				setLocation(x - mouseX, y - mouseY); 
+				setLocation(x - mouseX, y = mouseY); 
 			}
 		});
 		add(menuBar);
