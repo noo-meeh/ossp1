@@ -124,6 +124,7 @@ public class DynamicBeat extends JFrame {
 		});		
 		add(quitButton);
 		
+		
 		//상단 메뉴바 생성
 		menuBar.setBounds(0, 0, 1280, 30);
 		menuBar.addMouseListener(new MouseAdapter() {
