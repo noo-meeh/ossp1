@@ -92,7 +92,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) { //스타트 버튼 클릭시
 				//게임시작 이벤트
 				startButton.setVisible(false); // 스타트 버튼 가리기
-				quitButton.setVisible(false);  // 퀵 버튼 가리기 
+				quitButton.setVisible(false);  // 퀵 버튼 가리기
 				// 배경화면 다른 이미지 (메인 이미지)로 변경
 				background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
 				
@@ -133,6 +133,8 @@ public class DynamicBeat extends JFrame {
 				mouseY = e.getY();
 			}
 		});
+		
+		//창 이동
 		menuBar.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
 			public void mouseDragged(MouseEvent e) {
@@ -142,24 +144,6 @@ public class DynamicBeat extends JFrame {
 			}
 		});
 		add(menuBar);
-	/*	
-		menuBar.setBounds(0, 0, 1280, 30);
-		menuBar.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				mouseX = e.getX();
-				mouseY = e.getY();
-			}
-		});
-		menuBar.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseDragged(MouseEvent e) {
-				int x = e.getXOnScreen();
-				int y = e.getXOnScreen();
-				setLocation(x - mouseX, y = mouseY); 
-			}
-		});
-		add(menuBar);*/
 
 		Music introMusic = new Music("introMusic.mp3", true);
 		introMusic.start();
