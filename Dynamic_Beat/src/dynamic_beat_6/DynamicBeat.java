@@ -24,6 +24,8 @@ public class DynamicBeat extends JFrame {
 	
 	private Image selectedImage = new ImageIcon(Main.class.getResource("../images/Flutter Start Image.png")).getImage();
 	
+	private Image titleImage = new ImageIcon(Main.class.getResource("../images/Flutter Title Image.png")).getImage();
+			
 	
 	private ImageIcon exitButtonEnteredImage = new ImageIcon(Main.class.getResource("../images/exitButtonEntered.png"));
 	private ImageIcon exitButtonBasicImage = new ImageIcon(Main.class.getResource("../images/exitButtonBasic.png"));
@@ -107,8 +109,8 @@ public class DynamicBeat extends JFrame {
 				startButton.setVisible(false); // 스타트 버튼 가리기
 				quitButton.setVisible(false);  // 퀵 버튼 가리기
 				
-				leftButton.setVisible(true);
-				rightButton.setVisible(true);
+				leftButton.setVisible(true); //왼쪽 버튼 출력
+				rightButton.setVisible(true); //오른쪽 버튼 출력 
 				// 배경화면 다른 이미지 (메인 이미지)로 변경
 				background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
 				
@@ -141,6 +143,7 @@ public class DynamicBeat extends JFrame {
 		});		
 		add(quitButton);
 		
+		leftButton.setVisible(false); //시작화면에서는 안보이게  
 		leftButton.setBounds(140, 310, 60, 60);
 		leftButton.setBorderPainted(false);
 		leftButton.setContentAreaFilled(false);
@@ -164,7 +167,8 @@ public class DynamicBeat extends JFrame {
 		});		
 		add(leftButton);
 		
-		rightButton.setBounds(140, 310, 60, 60);
+		rightButton.setVisible(false); //시작화면에서는 안보이게 
+		rightButton.setBounds(1080, 310, 60, 60);
 		rightButton.setBorderPainted(false);
 		rightButton.setContentAreaFilled(false);
 		rightButton.setFocusPainted(false);
@@ -225,6 +229,7 @@ public class DynamicBeat extends JFrame {
 		g.drawImage(background, 0, 0, null);
 		if(isMainScreen) { // isMainScreen= true 라면 화면출력 
 			g.drawImage(selectedImage, 340, 100, null);
+			g.drawImage(titleImage, 340, 70, null);
 		}
 		paintComponents(g); // 이미지를 그려주는 역할
 		this.repaint();
