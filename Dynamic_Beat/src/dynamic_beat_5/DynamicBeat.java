@@ -47,10 +47,10 @@ public class DynamicBeat extends JFrame {
 		setBackground(new Color(0, 0, 0, 0));
 		setLayout(null);
 		
-		exitButton.setBounds(1245, 2, 28, 28);
-		//exitButton.setBorderPainted(false);
+		exitButton.setBounds(1245, 0, 28, 28);
+		exitButton.setBorderPainted(false);
 		//exitButton.setContentAreaFilled(false);
-		//exitButton.setFocusPainted(false);
+		exitButton.setFocusPainted(false);
 		exitButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
