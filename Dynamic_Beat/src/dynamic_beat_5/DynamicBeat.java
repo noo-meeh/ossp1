@@ -71,7 +71,7 @@ public class DynamicBeat extends JFrame {
 		add(exitButton);
 		
 
-		startButton.setBounds(60, 200, 170, 190);
+		startButton.setBounds(60, 200, 400, 100);
 		startButton.setBorderPainted(false);
 		startButton.setContentAreaFilled(false);
 		startButton.setFocusPainted(false);
@@ -93,7 +93,7 @@ public class DynamicBeat extends JFrame {
 		});		
 		add(startButton);
 		
-		quitButton.setBounds(60, 380, 170, 190);
+		quitButton.setBounds(60, 380, 400, 100);
 		quitButton.setBorderPainted(false);
 		quitButton.setContentAreaFilled(false);
 		quitButton.setFocusPainted(false);
