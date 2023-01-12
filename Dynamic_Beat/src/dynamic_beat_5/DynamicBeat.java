@@ -71,10 +71,10 @@ public class DynamicBeat extends JFrame {
 		add(exitButton);
 		
 
-		startButton.setBounds(1245, 50, 30, 30);
-		//startButton.setBorderPainted(false);
-		//startButton.setContentAreaFilled(false);
-		//startButton.setFocusPainted(false);
+		startButton.setBounds(40, 200, 400, 100);
+		startButton.setBorderPainted(false);
+		startButton.setContentAreaFilled(false);
+		startButton.setFocusPainted(false);
 		startButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -93,10 +93,10 @@ public class DynamicBeat extends JFrame {
 		});		
 		add(startButton);
 		
-		quitButton.setBounds(1245, 50, 30, 30);
-		//quitButton.setBorderPainted(false);
-		//quitButton.setContentAreaFilled(false);
-		//quitButton.setFocusPainted(false);
+		quitButton.setBounds(40, 330, 400, 100);
+		quitButton.setBorderPainted(false);
+		quitButton.setContentAreaFilled(false);
+		quitButton.setFocusPainted(false);
 		quitButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -133,7 +133,7 @@ public class DynamicBeat extends JFrame {
 			}
 		});
 		add(menuBar);
-		
+	/*	
 		menuBar.setBounds(0, 0, 1280, 30);
 		menuBar.addMouseListener(new MouseAdapter() {
 			@Override
@@ -150,7 +150,7 @@ public class DynamicBeat extends JFrame {
 				setLocation(x - mouseX, y = mouseY); 
 			}
 		});
-		add(menuBar);
+		add(menuBar);*/
 
 		Music introMusic = new Music("introMusic.mp3", true);
 		introMusic.start();
