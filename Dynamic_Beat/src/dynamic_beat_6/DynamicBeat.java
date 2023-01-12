@@ -38,7 +38,7 @@ public class DynamicBeat extends JFrame {
 	
 	private int mouseX, mouseY;
 	
-	private boolean isMainScreen = false; // 아직 버튼이 안눌린 상태
+	private boolean isMainScreen = false; // 아직 버튼이 안눌린 상태이므로 false
 	
 	public DynamicBeat() {
 		setUndecorated(true);
@@ -100,6 +100,7 @@ public class DynamicBeat extends JFrame {
 				// 배경화면 다른 이미지 (메인 이미지)로 변경
 				background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
 				
+				isMainScreen = true; //접속했으니 true로 변경
 			}
 		});		
 		add(startButton);
@@ -165,6 +166,9 @@ public class DynamicBeat extends JFrame {
 
 	public void screenDraw(Graphics g) {
 		g.drawImage(background, 0, 0, null);
+		if(isMainScreen) { // isMainScreen= true 라면 출력 
+			g.drawImage(selectedImage, 340, 100, null);
+		}
 		paintComponents(g); // 이미지를 그려주는 역할
 		this.repaint();
 	}
