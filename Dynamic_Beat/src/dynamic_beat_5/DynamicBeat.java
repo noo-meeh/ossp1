@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 public class DynamicBeat extends JFrame {
 
 	private Image screenImage;
+	
 	private Graphics screenGraphic;
 
 	private Image introBackground = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
@@ -24,8 +25,14 @@ public class DynamicBeat extends JFrame {
 	
 	private ImageIcon exitButtonEnteredImage = new ImageIcon(Main.class.getResource("../images/exitButtonEntered.png"));
 	private ImageIcon exitButtonBasicImage = new ImageIcon(Main.class.getResource("../images/exitButtonBasic.png"));
+	private ImageIcon startButtonEnteredImage = new ImageIcon(Main.class.getResource("../images/startButtonEntered.png"));
+	private ImageIcon startButtonBasicImage = new ImageIcon(Main.class.getResource("../images/startButtonBasic.png"));
+	private ImageIcon quitButtonEnteredImage = new ImageIcon(Main.class.getResource("../images/quitButtonEntered.png"));
+	private ImageIcon quitButtonBasicImage = new ImageIcon(Main.class.getResource("../images/quitButtonBasic.png"));
 	
 	private JButton exitButton = new JButton(exitButtonBasicImage);
+	private JButton startButton = new JButton(startButtonBasicImage);
+	private JButton quitButton = new JButton(quitButtonBasicImage);
 	
 	private int mouseX, mouseY;
 	
@@ -41,9 +48,9 @@ public class DynamicBeat extends JFrame {
 		setLayout(null);
 		
 		exitButton.setBounds(1245, 50, 30, 30);
-		//exitButton.setBorderPainted(false);
-		//exitButton.setContentAreaFilled(false);
-		//exitButton.setFocusPainted(false);
+		exitButton.setBorderPainted(false);
+		exitButton.setContentAreaFilled(false);
+		exitButton.setFocusPainted(false);
 		exitButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
