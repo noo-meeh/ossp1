@@ -94,7 +94,7 @@ public class DynamicBeat extends JFrame {
 				startButton.setVisible(false); // 스타트 버튼 가리기
 				quitButton.setVisible(false);  // 퀵 버튼 가리기 
 				// 배경화면 다른 이미지 (메인 이미지)로 변경
-				background = new ImageIcon(Main.class.getResource("../images/mainBackground.png")).getImage();
+				background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
 				
 			}
 		});		
