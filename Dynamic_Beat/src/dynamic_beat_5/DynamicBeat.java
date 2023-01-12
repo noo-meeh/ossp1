@@ -19,7 +19,7 @@ public class DynamicBeat extends JFrame {
 	
 	private Graphics screenGraphic;
 
-	private Image introBackground = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
+	private Image background = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
 	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getResource("../images/menuBar.png")));
 	
 	
@@ -89,6 +89,7 @@ public class DynamicBeat extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				//게임시작 이벤트
+				
 			}
 		});		
 		add(startButton);
@@ -166,7 +167,7 @@ public class DynamicBeat extends JFrame {
 	}
 
 	public void screenDraw(Graphics g) {
-		g.drawImage(introBackground, 0, 0, null);
+		g.drawImage(background, 0, 0, null);
 		paintComponents(g); // 이미지를 그려주는 역할
 		this.repaint();
 	}
