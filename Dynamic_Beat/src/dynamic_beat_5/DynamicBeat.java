@@ -48,9 +48,9 @@ public class DynamicBeat extends JFrame {
 		setLayout(null);
 		
 		exitButton.setBounds(1245, 50, 30, 30);
-		exitButton.setBorderPainted(false);
-		exitButton.setContentAreaFilled(false);
-		exitButton.setFocusPainted(false);
+		//exitButton.setBorderPainted(false);
+		//exitButton.setContentAreaFilled(false);
+		//exitButton.setFocusPainted(false);
 		exitButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -64,10 +64,57 @@ public class DynamicBeat extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
+				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
 				System.exit(0);
 			}
 		});		
 		add(exitButton);
+		
+
+		startButton.setBounds(1245, 50, 30, 30);
+		//startButton.setBorderPainted(false);
+		//startButton.setContentAreaFilled(false);
+		//startButton.setFocusPainted(false);
+		startButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				startButton.setIcon(startButtonEnteredImage);
+				startButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				startButton.setIcon(startButtonBasicImage);
+				startButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				//게임시작 이벤트
+			}
+		});		
+		add(startButton);
+		
+		quitButton.setBounds(1245, 50, 30, 30);
+		//quitButton.setBorderPainted(false);
+		//quitButton.setContentAreaFilled(false);
+		//quitButton.setFocusPainted(false);
+		quitButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				quitButton.setIcon(quitButtonEnteredImage);
+				quitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				quitButton.setIcon(quitButtonBasicImage);
+				quitButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				System.exit(0);
+			}
+		});		
+		add(quitButton);
 		
 		menuBar.setBounds(0, 0, 1280, 30);
 		menuBar.addMouseListener(new MouseAdapter() {
@@ -86,8 +133,24 @@ public class DynamicBeat extends JFrame {
 			}
 		});
 		add(menuBar);
-
-
+		
+		menuBar.setBounds(0, 0, 1280, 30);
+		menuBar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				mouseX = e.getX();
+				mouseY = e.getY();
+			}
+		});
+		menuBar.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseDragged(MouseEvent e) {
+				int x = e.getXOnScreen();
+				int y = e.getXOnScreen();
+				setLocation(x - mouseX, y = mouseY); 
+			}
+		});
+		add(menuBar);
 
 		Music introMusic = new Music("introMusic.mp3", true);
 		introMusic.start();
