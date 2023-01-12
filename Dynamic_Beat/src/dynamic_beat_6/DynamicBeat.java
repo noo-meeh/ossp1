@@ -42,6 +42,9 @@ public class DynamicBeat extends JFrame {
 	private JButton startButton = new JButton(startButtonBasicImage);
 	private JButton quitButton = new JButton(quitButtonBasicImage);
 	
+	private JButton leftButton = new JButton(leftButtonBasicImage);
+	private JButton rightButton = new JButton(rightButtonBasicImage);
+	
 	private int mouseX, mouseY;
 	
 	private boolean isMainScreen = false; // 아직 버튼이 안눌린 상태이므로 false
@@ -103,6 +106,9 @@ public class DynamicBeat extends JFrame {
 				//게임시작 이벤트
 				startButton.setVisible(false); // 스타트 버튼 가리기
 				quitButton.setVisible(false);  // 퀵 버튼 가리기
+				
+				leftButton.setVisible(true);
+				rightButton.setVisible(true);
 				// 배경화면 다른 이미지 (메인 이미지)로 변경
 				background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
 				
@@ -135,6 +141,51 @@ public class DynamicBeat extends JFrame {
 		});		
 		add(quitButton);
 		
+		leftButton.setBounds(140, 310, 60, 60);
+		leftButton.setBorderPainted(false);
+		leftButton.setContentAreaFilled(false);
+		leftButton.setFocusPainted(false);
+		leftButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				leftButton.setIcon(leftButtonEnteredImage);
+				leftButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				leftButton.setIcon(leftButtonBasicImage);
+				leftButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				// 왼쪽 버튼 이벤트
+			}
+		});		
+		add(leftButton);
+		
+		rightButton.setBounds(140, 310, 60, 60);
+		rightButton.setBorderPainted(false);
+		rightButton.setContentAreaFilled(false);
+		rightButton.setFocusPainted(false);
+		rightButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				rightButton.setIcon(rightButtonEnteredImage);
+				rightButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				rightButton.setIcon(rightButtonBasicImage);
+				rightButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				// 오른쪽 버튼 이벤트
+			}
+		});		
+		add(rightButton);
 		
 		//상단 메뉴바 생성
 		menuBar.setBounds(0, 0, 1280, 30);
