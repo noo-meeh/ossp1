@@ -47,6 +47,8 @@ public class DynamicBeat extends JFrame {
 		setBackground(new Color(0, 0, 0, 0));
 		setLayout(null);
 		
+		
+		// 메뉴바 종료버튼 생성
 		exitButton.setBounds(1245, 0, 28, 28);
 		exitButton.setBorderPainted(false);
 		//exitButton.setContentAreaFilled(false);
@@ -70,7 +72,7 @@ public class DynamicBeat extends JFrame {
 		});		
 		add(exitButton);
 		
-
+		//스타트 버튼 생성
 		startButton.setBounds(920, 450, 270, 68);
 		startButton.setBorderPainted(false);
 		startButton.setContentAreaFilled(false);
@@ -87,13 +89,18 @@ public class DynamicBeat extends JFrame {
 				startButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 			}
 			@Override
-			public void mousePressed(MouseEvent e) {
+			public void mousePressed(MouseEvent e) { //스타트 버튼 클릭시
 				//게임시작 이벤트
+				startButton.setVisible(false); // 스타트 버튼 가리기
+				quitButton.setVisible(false);  // 퀵 버튼 가리기 
+				// 배경화면 다른 이미지 (메인 이미지)로 변경
+				background = new ImageIcon(Main.class.getResource("../images/mainBackground.png")).getImage();
 				
 			}
 		});		
 		add(startButton);
 		
+		// 퀵버튼 생성
 		quitButton.setBounds(920, 550, 270, 68);
 		quitButton.setBorderPainted(false);
 		quitButton.setContentAreaFilled(false);
@@ -117,6 +124,7 @@ public class DynamicBeat extends JFrame {
 		});		
 		add(quitButton);
 		
+		//상단 메뉴바 생성
 		menuBar.setBounds(0, 0, 1280, 30);
 		menuBar.addMouseListener(new MouseAdapter() {
 			@Override
