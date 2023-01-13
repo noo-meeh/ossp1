@@ -55,6 +55,7 @@ public class DynamicBeat extends JFrame {
 	private Image selectedImage;	
 	private Image titleImage;
 	private Music selectedMusic;
+	private int nowSelected = 0;
 	
 	public DynamicBeat() {
 		setUndecorated(true);
@@ -69,6 +70,15 @@ public class DynamicBeat extends JFrame {
 		
 		Music introMusic = new Music("introMusic.mp3", true);
 		introMusic.start(); // 초기화면에서 배경음악 재생
+		
+		trackList.add(new Track("Flutter Title Image.png", "Flutter Start Image.png",
+				"Flutter Game Image.png", "Flutter Selected.mp3", "Flutter.mp3"));
+		
+		trackList.add(new Track("Why Title Image.png", "Why Start Image.png",
+				"Why Game Image.png", "Why Selected.mp3", "Why.mp3"));
+		
+		trackList.add(new Track("Light Title Image.png", "Light Start Image.png",
+				"Light Game Image.png", "Light Selected.mp3", "Light.mp3"));
 		
 		// 메뉴바 종료버튼 생성
 		exitButton.setBounds(1245, 0, 28, 28);
