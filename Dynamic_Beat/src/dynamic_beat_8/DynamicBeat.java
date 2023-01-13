@@ -245,6 +245,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
 				//  난이도 쉬움 이벤트
+				gameStart(nowSelected, "easy");
 				
 			}
 		});		
@@ -271,7 +272,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
 				//  난이도 어려움 이벤트
-				
+				gameStart(nowSelected, "hard");
 			}
 		});		
 		add(hardButton);
@@ -347,5 +348,19 @@ public class DynamicBeat extends JFrame {
 			nowSelected++;
 		}
 		selectTrack(nowSelected);
+	}
+	
+	public void gameStart(int nowSelected, String difficulty) {
+		if(selectedMusic != null) {
+			selectedMusic.close();
+		}
+		isMainScreen = false; //메인화면 닫기 
+		
+		leftButton.setVisible(false);
+		rightButton.setVisible(false);
+		easyButton.setVisible(false);
+		hardButton.setVisible(false);
+		
+		background = new ImageIcon(Main.class.getResource("../images/"+ trackList.get(nowSelected).getGameImage())).getImage();
 	}
 }
