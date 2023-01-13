@@ -104,6 +104,8 @@ public class DynamicBeat extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 				exitButton.setIcon(exitButtonEnteredImage);
 				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);
+				buttonEnteredMusic.start();
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -111,8 +113,15 @@ public class DynamicBeat extends JFrame {
 				exitButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 			}
 			@Override
-			public void mousePressed(MouseEvent e) {
-				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+			public void mousePressed(MouseEvent e) { 
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
+				buttonEnteredMusic.start();
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException ex) {
+					ex.printStackTrace();
+				}
+				
 				System.exit(0);
 			}
 		});		
@@ -128,6 +137,8 @@ public class DynamicBeat extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 				startButton.setIcon(startButtonEnteredImage);
 				startButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);
+				buttonEnteredMusic.start();
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -137,9 +148,11 @@ public class DynamicBeat extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) { //스타트 버튼 클릭시
 				//게임시작 이벤트
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
+				buttonEnteredMusic.start();
 				
 				introMusic.close(); //스타트 버튼 클릭시 초기화면 음악 중지
-
+				
 				selectTrack(0);
 				startButton.setVisible(false); // 스타트 버튼 가리기
 				quitButton.setVisible(false);  // 퀵 버튼 가리기
@@ -167,6 +180,8 @@ public class DynamicBeat extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 				quitButton.setIcon(quitButtonEnteredImage);
 				quitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);
+				buttonEnteredMusic.start();
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -175,7 +190,13 @@ public class DynamicBeat extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
+				buttonEnteredMusic.start();
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException ex) {
+					ex.printStackTrace();
+				}
 				System.exit(0);
 			}
 		});		
@@ -191,6 +212,8 @@ public class DynamicBeat extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 				leftButton.setIcon(leftButtonEnteredImage);
 				leftButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);
+				buttonEnteredMusic.start();
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -199,7 +222,8 @@ public class DynamicBeat extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
+				buttonEnteredMusic.start(); 
 				// 왼쪽 버튼 이벤트
 				selectLeft();
 			}
@@ -216,6 +240,8 @@ public class DynamicBeat extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 				rightButton.setIcon(rightButtonEnteredImage);
 				rightButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);
+				buttonEnteredMusic.start();
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -224,7 +250,8 @@ public class DynamicBeat extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
+				buttonEnteredMusic.start();  
 				// 오른쪽 버튼 이벤트
 				selectRight();
 			}
@@ -241,6 +268,8 @@ public class DynamicBeat extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 				easyButton.setIcon(easyButtonEnteredImage);
 				easyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);
+				buttonEnteredMusic.start();
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -249,7 +278,8 @@ public class DynamicBeat extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
+				buttonEnteredMusic.start();  
 				//  난이도 쉬움 이벤트
 				gameStart(nowSelected, "easy");
 				
@@ -268,6 +298,8 @@ public class DynamicBeat extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 				hardButton.setIcon(hardButtonEnteredImage);
 				hardButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);
+				buttonEnteredMusic.start();
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -276,7 +308,8 @@ public class DynamicBeat extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
+				buttonEnteredMusic.start(); 
 				//  난이도 어려움 이벤트
 				gameStart(nowSelected, "hard");
 			}
@@ -293,6 +326,8 @@ public class DynamicBeat extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 				backButton.setIcon(backButtonEnteredImage);
 				backButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				Music buttonEnteredMusic = new Music("buttonEnteredMusic.mp3", false);
+				buttonEnteredMusic.start();
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
@@ -301,7 +336,8 @@ public class DynamicBeat extends JFrame {
 			}
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
+				buttonEnteredMusic.start(); 
 				// 메인화면으로 돌아가는 이벤트;
 				backMain();
 			}
