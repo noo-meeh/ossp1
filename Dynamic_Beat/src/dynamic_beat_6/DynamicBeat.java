@@ -27,6 +27,7 @@ public class DynamicBeat extends JFrame {
 	private Image titleImage = new ImageIcon(Main.class.getResource("../images/Flutter Title Image.png")).getImage();
 			
 	
+	
 	private ImageIcon exitButtonEnteredImage = new ImageIcon(Main.class.getResource("../images/exitButtonEntered.png"));
 	private ImageIcon exitButtonBasicImage = new ImageIcon(Main.class.getResource("../images/exitButtonBasic.png"));
 	private ImageIcon startButtonEnteredImage = new ImageIcon(Main.class.getResource("../images/startButtonEntered.png"));
