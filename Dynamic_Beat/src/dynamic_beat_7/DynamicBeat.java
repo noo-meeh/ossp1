@@ -23,9 +23,7 @@ public class DynamicBeat extends JFrame {
 	private Image background = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
 	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getResource("../images/menuBar.png")));
 	
-	private Image selectedImage = new ImageIcon(Main.class.getResource("../images/Flutter Start Image.png")).getImage();
-	
-	private Image titleImage = new ImageIcon(Main.class.getResource("../images/Flutter Title Image.png")).getImage();
+
 			
 	
 	private ImageIcon exitButtonEnteredImage = new ImageIcon(Main.class.getResource("../images/exitButtonEntered.png"));
@@ -54,6 +52,9 @@ public class DynamicBeat extends JFrame {
 	
 	ArrayList<Track> trackList = new ArrayList<Track>();
 	
+	private Image selectedImage;	
+	private Image titleImage;
+	private Music selectedMusic;
 	
 	public DynamicBeat() {
 		setUndecorated(true);
@@ -114,8 +115,7 @@ public class DynamicBeat extends JFrame {
 				//게임시작 이벤트
 				
 				introMusic.close(); //스타트 버튼 클릭시 초기화면 음악 중지
-				Music selectedMusic = new Music("Flutter Selected.mp3", true);
-				selectedMusic.start(); //곡 선택화면에서 해당 음악 재생 
+
 				
 				startButton.setVisible(false); // 스타트 버튼 가리기
 				quitButton.setVisible(false);  // 퀵 버튼 가리기
@@ -243,6 +243,16 @@ public class DynamicBeat extends JFrame {
 		}
 		paintComponents(g); // 이미지를 그려주는 역할
 		this.repaint();
+	}
+	
+	public void selectedTrack(int nowSelected) {
+		if(selectedMusic != null) {
+			selectedMusic.close();
+		}
+		titleImage = new ImageIcon(Main.class.getResource("../images/" + trackList.get(nowSelected).getTitleImage())).getImage();
+		selectedImage = new ImageIcon(Main.class.getResource("../images/" + trackList.get(nowSelected).getStartImage())).getImage();
+		selectedMusic = new Music(trackList.get(nowSelected).getStartMusic(),true);
+		selectedMusic.start();
 	}
 
 }
