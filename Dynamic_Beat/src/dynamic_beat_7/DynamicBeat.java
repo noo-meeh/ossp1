@@ -110,7 +110,7 @@ public class DynamicBeat extends JFrame {
 				//게임시작 이벤트
 				
 				introMusic.close(); //스타트 버튼 클릭시 초기화면 음악 중지
-				Music selectedMusic = new Music("Flutter.mp3", true);
+				Music selectedMusic = new Music("Flutter Selected.mp3", true);
 				selectedMusic.start(); //곡 선택화면에서 해당 음악 재생 
 				
 				startButton.setVisible(false); // 스타트 버튼 가리기
