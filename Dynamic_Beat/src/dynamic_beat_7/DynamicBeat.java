@@ -7,6 +7,7 @@ import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -50,6 +51,9 @@ public class DynamicBeat extends JFrame {
 	private int mouseX, mouseY;
 	
 	private boolean isMainScreen = false; // 아직 버튼이 안눌린 상태이므로 false
+	
+	ArrayList<Track> trackList = new ArrayList<Track>();
+	
 	
 	public DynamicBeat() {
 		setUndecorated(true);
