@@ -302,7 +302,8 @@ public class DynamicBeat extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
-				// 메인화면으로 돌아가는 이벤트
+				// 메인화면으로 돌아가는 이벤트;
+				backMain();
 			}
 		});		
 		add(backButton);
@@ -395,5 +396,19 @@ public class DynamicBeat extends JFrame {
 		background = new ImageIcon(Main.class.getResource("../images/"+ trackList.get(nowSelected).getGameImage())).getImage();
 		
 		backButton.setVisible(true);
+	}
+	
+	public void backMain() {
+		
+		isMainScreen = true;
+		leftButton.setVisible(true);
+		rightButton.setVisible(true);
+		easyButton.setVisible(true);
+		hardButton.setVisible(true);
+		
+		background = new ImageIcon(Main.class.getResource("../images/mainBackground,jpg")).getImage();
+	
+		backButton.setVisible(false);
+		selectTrack(nowSelected);
 	}
 }
