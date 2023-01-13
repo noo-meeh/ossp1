@@ -50,6 +50,9 @@ public class DynamicBeat extends JFrame {
 	
 	private JButton leftButton = new JButton(leftButtonBasicImage);
 	private JButton rightButton = new JButton(rightButtonBasicImage);
+
+	private JButton easyButton = new JButton(easyButtonBasicImage);
+	private JButton hardButton = new JButton(hardButtonBasicImage);
 	
 	private int mouseX, mouseY;
 	
@@ -218,6 +221,57 @@ public class DynamicBeat extends JFrame {
 			}
 		});		
 		add(rightButton);
+		
+		easyButton.setVisible(false); //시작화면에서는 안보이게 
+		easyButton.setBounds(375, 580, 250, 90);
+		easyButton.setBorderPainted(false);
+		easyButton.setContentAreaFilled(false);
+		easyButton.setFocusPainted(false);
+		easyButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				easyButton.setIcon(easyButtonEnteredImage);
+				easyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				easyButton.setIcon(easyButtonBasicImage);
+				easyButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				//  난이도 쉬움 이벤트
+				
+			}
+		});		
+		add(easyButton);
+		
+		
+		hardButton.setVisible(false); //시작화면에서는 안보이게 
+		hardButton.setBounds(375, 580, 250, 90);
+		hardButton.setBorderPainted(false);
+		hardButton.setContentAreaFilled(false);
+		hardButton.setFocusPainted(false);
+		hardButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				easyButton.setIcon(hardButtonEnteredImage);
+				easyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				hardButton.setIcon(hardButtonBasicImage);
+				hardButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
+				//  난이도 어려움 이벤트
+				
+			}
+		});		
+		add(hardButton);
 		
 		//상단 메뉴바 생성
 		menuBar.setBounds(0, 0, 1280, 30);
