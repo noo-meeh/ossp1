@@ -406,7 +406,7 @@ public class DynamicBeat extends JFrame {
 		easyButton.setVisible(true);
 		hardButton.setVisible(true);
 		
-		background = new ImageIcon(Main.class.getResource("../images/mainBackground,jpg")).getImage();
+		background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
 	
 		backButton.setVisible(false);
 		selectTrack(nowSelected);
