@@ -140,6 +140,9 @@ public class DynamicBeat extends JFrame {
 				
 				leftButton.setVisible(true); //왼쪽 버튼 출력
 				rightButton.setVisible(true); //오른쪽 버튼 출력 
+				
+				easyButton.setVisible(true); //이지 버튼 출력
+				hardButton.setVisible(true); //하드 버튼 출력 
 				// 배경화면 다른 이미지 (메인 이미지)로 변경
 				background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
 				
@@ -249,15 +252,15 @@ public class DynamicBeat extends JFrame {
 		
 		
 		hardButton.setVisible(false); //시작화면에서는 안보이게 
-		hardButton.setBounds(375, 580, 250, 90);
+		hardButton.setBounds(655, 580, 250, 90);
 		hardButton.setBorderPainted(false);
 		hardButton.setContentAreaFilled(false);
 		hardButton.setFocusPainted(false);
 		hardButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				easyButton.setIcon(hardButtonEnteredImage);
-				easyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				hardButton.setIcon(hardButtonEnteredImage);
+				hardButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
