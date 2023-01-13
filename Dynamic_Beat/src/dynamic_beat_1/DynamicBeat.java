@@ -11,6 +11,7 @@ public class DynamicBeat extends JFrame {
 		setLocationRelativeTo(null); // 실행 시 창 중앙으로 설정 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
+		
 	}
 
 }

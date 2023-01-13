@@ -1,4 +1,4 @@
-package dynamic_beat_1;
+package dynamic_beat_6;
 
 public class Main {
 
