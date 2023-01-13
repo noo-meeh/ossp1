@@ -126,7 +126,7 @@ public class DynamicBeat extends JFrame {
 				
 				introMusic.close(); //스타트 버튼 클릭시 초기화면 음악 중지
 
-				
+				selectTrack(0);
 				startButton.setVisible(false); // 스타트 버튼 가리기
 				quitButton.setVisible(false);  // 퀵 버튼 가리기
 				
@@ -184,6 +184,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
 				// 왼쪽 버튼 이벤트
+				selectLeft();
 			}
 		});		
 		add(leftButton);
@@ -208,6 +209,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				// 버튼 소리 재생 부분 삭제 (4강 마지막 파트) 
 				// 오른쪽 버튼 이벤트
+				selectRight();
 			}
 		});		
 		add(rightButton);
@@ -255,7 +257,7 @@ public class DynamicBeat extends JFrame {
 		this.repaint();
 	}
 	
-	public void selectedTrack(int nowSelected) {
+	public void selectTrack(int nowSelected) {
 		if(selectedMusic != null) {
 			selectedMusic.close();
 		}
@@ -264,5 +266,24 @@ public class DynamicBeat extends JFrame {
 		selectedMusic = new Music(trackList.get(nowSelected).getStartMusic(),true);
 		selectedMusic.start();
 	}
-
+	
+	public void selectLeft() {
+		if(nowSelected == 0) {
+			nowSelected = trackList.size() -1;
+		}
+		else {
+			nowSelected--;
+		}
+		selectTrack(nowSelected);
+	}
+	
+	public void selectRight() {
+		if(nowSelected == trackList.size() -1) {
+			nowSelected = 0;
+		}
+		else {
+			nowSelected++;
+		}
+		selectTrack(nowSelected);
+	}
 }
