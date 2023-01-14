@@ -69,6 +69,9 @@ public class DynamicBeat extends JFrame {
 	private Image selectedImage;	
 	private Image titleImage;
 	private Music selectedMusic;
+	
+	private Music introMusic = new Music("introMusic.mp3", true);
+	
 	private int nowSelected = 0;
 	
 	public DynamicBeat() {
@@ -82,7 +85,7 @@ public class DynamicBeat extends JFrame {
 		setBackground(new Color(0, 0, 0, 0));
 		setLayout(null);
 		
-		Music introMusic = new Music("introMusic.mp3", true);
+		
 		introMusic.start(); // 초기화면에서 배경음악 재생
 		
 		trackList.add(new Track("Flutter Title Image.png", "Flutter Start Image.png",
@@ -153,19 +156,7 @@ public class DynamicBeat extends JFrame {
 				
 				introMusic.close(); //스타트 버튼 클릭시 초기화면 음악 중지
 				
-				selectTrack(0);
-				startButton.setVisible(false); // 스타트 버튼 가리기
-				quitButton.setVisible(false);  // 퀵 버튼 가리기
-				
-				leftButton.setVisible(true); //왼쪽 버튼 출력
-				rightButton.setVisible(true); //오른쪽 버튼 출력 
-				
-				easyButton.setVisible(true); //이지 버튼 출력
-				hardButton.setVisible(true); //하드 버튼 출력 
-				// 배경화면 다른 이미지 (메인 이미지)로 변경
-				background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
-				
-				isMainScreen = true; //접속했으니 true로 변경
+
 			}
 		});		
 		add(startButton);
@@ -446,5 +437,25 @@ public class DynamicBeat extends JFrame {
 	
 		backButton.setVisible(false);
 		selectTrack(nowSelected);
+	}
+	public void enterMain() {
+		
+		startButton.setVisible(false); // 스타트 버튼 가리기
+		quitButton.setVisible(false);  // 퀵 버튼 가리기
+		
+		background = new ImageIcon(Main.class.getResource("../images/mainBackground.jpg")).getImage();
+		
+		isMainScreen = true; //접속했으니 true로 변경
+		
+		leftButton.setVisible(true); //왼쪽 버튼 출력
+		rightButton.setVisible(true); //오른쪽 버튼 출력 
+		
+		easyButton.setVisible(true); //이지 버튼 출력
+		hardButton.setVisible(true); //하드 버튼 출력 
+		// 배경화면 다른 이미지 (메인 이미지)로 변경
+		introMusic.close();
+		
+
+		selectTrack(0);
 	}
 }
