@@ -419,6 +419,12 @@ public class DynamicBeat extends JFrame {
 			g.setColor(Color.white);
 			g.setFont(new Font("Arial", Font.BOLD, 30));
 			g.drawString("Diamond eyes - Flutter ", 20, 702);
+			g.drawString("Easy", 1190, 702);
+			
+			
+			
+			g.setFont(new Font("Elephant", Font.BOLD, 30));
+			g.drawString("000000", 565, 702);
 			
 			g.setColor(getBackground());
 			
