@@ -79,7 +79,7 @@ public class DynamicBeat extends JFrame {
 	
 	private int nowSelected = 0;
 	
-	Game game = new Game();
+	public static Game game = new Game();
 	
 	
 	public DynamicBeat() {
@@ -93,6 +93,7 @@ public class DynamicBeat extends JFrame {
 		setBackground(new Color(0, 0, 0, 0));
 		setLayout(null);
 		
+		addKeyListener(new KeyListener());
 		
 		introMusic.start(); // 초기화면에서 배경음악 재생
 		
@@ -438,6 +439,7 @@ public class DynamicBeat extends JFrame {
 		
 		backButton.setVisible(true);
 		isGameScreen = true;
+		setFocusable(true);
 	}
 	
 	public void backMain() {
