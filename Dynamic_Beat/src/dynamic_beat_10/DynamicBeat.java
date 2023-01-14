@@ -2,8 +2,11 @@ package dynamic_beat_10;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -371,12 +374,12 @@ public class DynamicBeat extends JFrame {
 	public void paint(Graphics g) {
 		screenImage = createImage(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
 		screenGraphic = screenImage.getGraphics();
-		screenDraw(screenGraphic);
+		screenDraw((Graphics2D)screenGraphic);
 		g.drawImage(screenImage, 0, 0, null);
 
 	}
 
-	public void screenDraw(Graphics g) {
+	public void screenDraw(Graphics2D g) {
 		g.drawImage(background, 0, 0, null);
 		if(isMainScreen) { // isMainScreen= true 라면 화면출력 
 			g.drawImage(selectedImage, 340, 100, null);
@@ -411,6 +414,13 @@ public class DynamicBeat extends JFrame {
 			g.drawImage(noteBasicImage, 744, 325, null);
 			g.drawImage(noteBasicImage, 848, 305, null);
 			g.drawImage(noteBasicImage, 952, 305, null);
+			
+			g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+			g.setColor(Color.white);
+			g.setFont(new Font("Arial", Font.BOLD, 30));
+			g.drawString("Diamond eyes - Flutter ", 20, 702);
+			
+			g.setColor(getBackground());
 			
 			
 			g.drawImage(gameInfoImage, 0, 660, null);
