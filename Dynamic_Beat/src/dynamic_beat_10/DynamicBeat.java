@@ -19,9 +19,13 @@ public class DynamicBeat extends JFrame {
 	private Image screenImage;
 	
 	private Graphics screenGraphic;
+	
+	private Image gameInfoImage = new ImageIcon(Main.class.getResource("../images/gameInfo.png")).getImage();
+	private Image judgementLineImage = new ImageIcon(Main.class.getResource("../images/judgementLine.png")).getImage();
+	private Image noteRouteImage = new ImageIcon(Main.class.getResource("../images/judgementLine.png")).getImage();
 
 	private Image background = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
-	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getResource("../images/menuBar.png")));
+	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getResource("../images/noteRouteImage.png")));
 	
 
 			
@@ -63,6 +67,7 @@ public class DynamicBeat extends JFrame {
 	private int mouseX, mouseY;
 	
 	private boolean isMainScreen = false; // 아직 버튼이 안눌린 상태이므로 false
+	private boolean isGameScreen = false;
 	
 	ArrayList<Track> trackList = new ArrayList<Track>();
 	
@@ -375,6 +380,11 @@ public class DynamicBeat extends JFrame {
 			g.drawImage(selectedImage, 340, 100, null);
 			g.drawImage(titleImage, 340, 70, null);
 		}
+		
+		if(isGameScreen) {
+			g.drawImage(gameInfoImage, 0, 660, null);
+			g.drawImage(judgementLineImage, 0,580, null);
+		}
 		paintComponents(g); // 이미지를 그려주는 역할
 		this.repaint();
 	}
@@ -423,6 +433,7 @@ public class DynamicBeat extends JFrame {
 		background = new ImageIcon(Main.class.getResource("../images/"+ trackList.get(nowSelected).getGameImage())).getImage();
 		
 		backButton.setVisible(true);
+		isGameScreen = true;
 	}
 	
 	public void backMain() {
@@ -437,6 +448,7 @@ public class DynamicBeat extends JFrame {
 	
 		backButton.setVisible(false);
 		selectTrack(nowSelected);
+		isGameScreen = false;
 	}
 	public void enterMain() {
 		
