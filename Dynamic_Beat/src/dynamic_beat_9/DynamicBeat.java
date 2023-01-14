@@ -155,7 +155,7 @@ public class DynamicBeat extends JFrame {
 				buttonEnteredMusic.start();
 				
 				introMusic.close(); //스타트 버튼 클릭시 초기화면 음악 중지
-				
+				enterMain();
 
 			}
 		});		
