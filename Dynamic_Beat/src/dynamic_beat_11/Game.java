@@ -80,6 +80,71 @@ public class Game extends Thread{
 		
 		//g.setColor(getBackground());
 	}
+	public void pressS() {
+		noteRouteSImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
+		new Music("drumSmall1.mp3", false).start();
+	}
+	public void releaseS() {
+		noteRouteSImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	}
+	
+	public void pressD() {
+		noteRouteDImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
+		new Music("drumSmall1.mp3", false).start();
+	}
+	
+	public void releaseD() {
+		noteRouteDImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	}
+	
+	public void pressF() {
+		noteRouteFImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
+		new Music("drumSmall1.mp3", false).start();
+	}
+	
+	public void releaseF() {
+		noteRouteFImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	}
+	
+	public void pressSpace() {
+		noteRouteSpace1Image = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
+		noteRouteSpace2Image = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
+		
+	}
+	
+	public void releaseSpace() {
+		noteRouteSpace1Image = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		noteRouteSpace2Image = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		new Music("drumBig1.mp3", false).start();
+	}
+	
+	public void pressJ() {
+		noteRouteJImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
+		new Music("drumSmall1.mp3", false).start();
+	}
+	
+	public void releaseJ() {
+		noteRouteJImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+		
+	}
+	
+	public void pressK() {
+		noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
+		new Music("drumSmall1.mp3", false).start();
+	}
+	
+	public void releaseK() {
+		noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	}
+	
+	public void pressL() {
+		noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
+		new Music("drumSmall1.mp3", false).start();
+	}
+	
+	public void releaseL() {
+		noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	}
 	
 	@Override
 	public void run() {
