@@ -415,6 +415,16 @@ public class DynamicBeat extends JFrame {
 			g.drawImage(noteBasicImage, 848, 305, null);
 			g.drawImage(noteBasicImage, 952, 305, null);
 			
+			g.setFont(new Font("Arial", Font.PLAIN, 26));
+			g.setColor(Color.WHITE);
+			g.drawString("S", 270, 609);
+			g.drawString("D", 374, 609);
+			g.drawString("F", 478, 609);
+			g.drawString("Space Bar", 580, 609);
+			g.drawString("J", 784, 609);
+			g.drawString("K", 889, 609);
+			g.drawString("L", 993, 609);
+			
 			g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 			g.setColor(Color.white);
 			g.setFont(new Font("Arial", Font.BOLD, 30));
