@@ -9,12 +9,21 @@ import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
 
 public class Game extends Thread{
-	
-	private Image gameInfoImage = new ImageIcon(Main.class.getResource("../images/gameInfo.png")).getImage();
-	private Image judgementLineImage = new ImageIcon(Main.class.getResource("../images/judgementLine.png")).getImage();
-	private Image noteRouteImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
-	private Image noteRouteLineImage = new ImageIcon(Main.class.getResource("../images/noteRouteLine.png")).getImage();
 	private Image noteBasicImage = new ImageIcon(Main.class.getResource("../images/noteBasic.png")).getImage();
+	private Image noteRouteLineImage = new ImageIcon(Main.class.getResource("../images/noteRouteLine.png")).getImage();
+	private Image judgementLineImage = new ImageIcon(Main.class.getResource("../images/judgementLine.png")).getImage();
+	private Image gameInfoImage = new ImageIcon(Main.class.getResource("../images/gameInfo.png")).getImage();
+	
+	private Image noteRouteSImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	private Image noteRouteDImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	private Image noteRouteFImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	private Image noteRouteSpace1Image = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	private Image noteRouteSpace2Image = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	private Image noteRouteJImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	private Image noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	private Image noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	
+	
 	
 	
 	public void screenDraw(Graphics2D g) {
@@ -30,14 +39,14 @@ public class Game extends Thread{
 		g.drawImage(gameInfoImage, 0, 660, null);
 		g.drawImage(judgementLineImage, 0,580, null);
 		
-		g.drawImage(noteRouteImage, 228, 30, null);
-		g.drawImage(noteRouteImage, 332, 30, null);
-		g.drawImage(noteRouteImage, 436, 30, null);
-		g.drawImage(noteRouteImage, 540, 30, null);
-		g.drawImage(noteRouteImage, 640, 30, null);
-		g.drawImage(noteRouteImage, 744, 30, null);
-		g.drawImage(noteRouteImage, 848, 30, null);
-		g.drawImage(noteRouteImage, 952, 30, null);
+		g.drawImage(noteRouteSImage, 228, 30, null);
+		g.drawImage(noteRouteDImage, 332, 30, null);
+		g.drawImage(noteRouteFImage, 436, 30, null);
+		g.drawImage(noteRouteSpace1Image, 540, 30, null);
+		g.drawImage(noteRouteSpace2Image, 640, 30, null);
+		g.drawImage(noteRouteJImage, 744, 30, null);
+		g.drawImage(noteRouteKImage, 848, 30, null);
+		g.drawImage(noteRouteLImage, 952, 30, null);
 		
 		g.drawImage(noteBasicImage, 228, 120, null);
 		g.drawImage(noteBasicImage, 332, 580, null);
