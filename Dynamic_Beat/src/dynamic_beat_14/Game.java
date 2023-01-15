@@ -175,12 +175,28 @@ public class Game extends Thread{
 	
 
 	public void dropNotes() {
-		Beat[] beats = {
-				new Beat(1000, "S"),
-				new Beat(2000, "D"),
-				new Beat(3000, "F"),
-		};
+		Beat[] beats = null;
+		if(titleName.equals("Flutter")) {
+			int startTime = 1000 -Main.REACH_TIME * 1000;
+			beats = new Beat[] {
+					new Beat(startTime, "Space"),
+			};
+		}
+		else if(titleName.equals("Why")) {
+			int startTime = 1000;
+			beats = new Beat[] {
+					new Beat(startTime, "Space"),
+			};
+		}
+		else if(titleName.equals("Light")) {
+			int startTime = 1000;
+			beats = new Beat[] {
+					new Beat(startTime, "Space"),
+			};
+		}
+		
 		int i=0;
+		
 		while(true) {
 			if(beats[i].getTime() <= gameMusic.getTime()) {
 				Note note = new Note(beats[i].getNoteName());
