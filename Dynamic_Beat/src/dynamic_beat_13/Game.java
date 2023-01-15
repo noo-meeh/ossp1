@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
@@ -27,6 +28,8 @@ public class Game extends Thread{
 	private String difficulty;
 	private String musicTitle;
 	private Music gameMusic;
+	
+	ArrayList<Note> noteList = new ArrayList<Note>();
 	
 	public Game (String titleName, String difficulty, String musicTitle) {
 		this.titleName = titleName;
@@ -68,7 +71,7 @@ public class Game extends Thread{
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		g.setColor(Color.white);
 		g.setFont(new Font("Arial", Font.BOLD, 30));
-		g.drawString("Diamond eyes - Flutter ", 20, 702);
+		//g.drawString("Diamond eyes - Flutter ", 20, 702);
 		g.drawString(titleName, 20, 702);
 		g.drawString(difficulty, 1190, 702);
 		
@@ -155,5 +158,10 @@ public class Game extends Thread{
 	
 	@Override
 	public void run() {
+	}
+	
+	public void close() {
+		gameMusic.close();
+		this.interrupt();
 	}
 }
