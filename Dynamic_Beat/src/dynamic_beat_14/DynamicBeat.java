@@ -393,6 +393,11 @@ public class DynamicBeat extends JFrame {
 			
 		}
 		paintComponents(g); // 이미지를 그려주는 역할
+		try {
+			Thread.sleep(5);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		this.repaint();
 	}
 	

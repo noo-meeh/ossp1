@@ -361,12 +361,21 @@ public class Game extends Thread{
 		
 		int i=0;
 		gameMusic.start();
-		while(true) {
+		while(i < beats.length && !isInterrupted()) {
+			boolean dropped = false;
 			if(beats[i].getTime() <= gameMusic.getTime()) {
 				Note note = new Note(beats[i].getNoteName());
 				note.start();
 				noteList.add(note);
 				i++;
+				dropped = true;
+			}
+			if(!dropped) {
+				try {
+					Thread.sleep(5);
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
 			}
 			
 		}
