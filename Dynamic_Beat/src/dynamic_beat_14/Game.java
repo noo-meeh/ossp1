@@ -37,7 +37,7 @@ public class Game extends Thread{
 		this.musicTitle = musicTitle;
 		
 		gameMusic = new Music(this.musicTitle, false);
-		gameMusic.start();
+		
 
 		
 	}
@@ -196,7 +196,7 @@ public class Game extends Thread{
 		}
 		
 		int i=0;
-		
+		gameMusic.start();
 		while(true) {
 			if(beats[i].getTime() <= gameMusic.getTime()) {
 				Note note = new Note(beats[i].getNoteName());
