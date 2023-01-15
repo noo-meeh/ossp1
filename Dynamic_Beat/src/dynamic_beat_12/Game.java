@@ -25,10 +25,17 @@ public class Game extends Thread{
 	
 	private String titleName;
 	private String difficulty;
+	private String musicTitle;
+	private Music gameMusic;
 	
-	private Game (String titleName, String difficulty) {
+	public Game (String titleName, String difficulty, String musicTitle) {
 		this.titleName = titleName;
 		this.difficulty = difficulty;
+		this.musicTitle = musicTitle;
+		
+		gameMusic = new Music(this.musicTitle, false);
+		gameMusic.start();
+		
 	}
 	
 	

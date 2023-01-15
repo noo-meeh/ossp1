@@ -2,11 +2,9 @@ package dynamic_beat_12;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -98,13 +96,13 @@ public class DynamicBeat extends JFrame {
 		introMusic.start(); // 초기화면에서 배경음악 재생
 		
 		trackList.add(new Track("Flutter Title Image.png", "Flutter Start Image.png",
-				"Flutter Game Image.png", "Flutter Selected.mp3", "Flutter.mp3"));
+				"Flutter Game Image.png", "Flutter Selected.mp3", "Flutter.mp3", "Flutter"));
 		
 		trackList.add(new Track("Why Title Image.png", "Why Start Image.png",
-				"Why Game Image.png", "Why Selected.mp3", "Why.mp3"));
+				"Why Game Image.png", "Why Selected.mp3", "Why.mp3", "Why"));
 		
 		trackList.add(new Track("Light Title Image.png", "Light Start Image.png",
-				"Light Game Image.png", "Light Selected.mp3", "Light.mp3"));
+				"Light Game Image.png", "Light Selected.mp3", "Light.mp3", "Light"));
 		
 		// 메뉴바 종료버튼 생성
 		exitButton.setBounds(1245, 0, 28, 28);
@@ -281,7 +279,7 @@ public class DynamicBeat extends JFrame {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start();  
 				//  난이도 쉬움 이벤트
-				gameStart(nowSelected, "easy");
+				gameStart(nowSelected, "Easy");
 				
 			}
 		});		
@@ -311,7 +309,7 @@ public class DynamicBeat extends JFrame {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start(); 
 				//  난이도 어려움 이벤트
-				gameStart(nowSelected, "hard");
+				gameStart(nowSelected, "Hard");
 			}
 		});		
 		add(hardButton);
@@ -440,6 +438,9 @@ public class DynamicBeat extends JFrame {
 		backButton.setVisible(true);
 		isGameScreen = true;
 		setFocusable(true);
+		
+		game = new Game(trackList.get(nowSelected).getTitleName(), difficulty, trackList.get(nowSelected).getGameMusic());
+
 	}
 	
 	public void backMain() {
