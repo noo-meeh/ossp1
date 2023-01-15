@@ -337,6 +337,7 @@ public class DynamicBeat extends JFrame {
 				Music buttonEnteredMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonEnteredMusic.start(); 
 				// 메인화면으로 돌아가는 이벤트;
+				
 				backMain();
 			}
 		});		
@@ -456,6 +457,7 @@ public class DynamicBeat extends JFrame {
 		backButton.setVisible(false);
 		selectTrack(nowSelected);
 		isGameScreen = false;
+		game.close();
 	}
 	public void enterMain() {
 		
