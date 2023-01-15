@@ -1,4 +1,4 @@
-package dynamic_beat_12;
+package dynamic_beat_13;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,7 +9,7 @@ import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
 
 public class Game extends Thread{
-	private Image noteBasicImage = new ImageIcon(Main.class.getResource("../images/noteBasic.png")).getImage();
+	
 	private Image noteRouteLineImage = new ImageIcon(Main.class.getResource("../images/noteRouteLine.png")).getImage();
 	private Image judgementLineImage = new ImageIcon(Main.class.getResource("../images/judgementLine.png")).getImage();
 	private Image gameInfoImage = new ImageIcon(Main.class.getResource("../images/gameInfo.png")).getImage();
@@ -61,21 +61,14 @@ public class Game extends Thread{
 		g.drawImage(noteRouteKImage, 848, 30, null);
 		g.drawImage(noteRouteLImage, 952, 30, null);
 		
-		g.drawImage(noteBasicImage, 228, 120, null);
-		g.drawImage(noteBasicImage, 332, 580, null);
-		g.drawImage(noteBasicImage, 436, 500, null);
-		g.drawImage(noteBasicImage, 540, 340, null);
-		g.drawImage(noteBasicImage, 640, 340, null);
-		g.drawImage(noteBasicImage, 744, 325, null);
-		g.drawImage(noteBasicImage, 848, 305, null);
-		g.drawImage(noteBasicImage, 952, 305, null);
+
 		
 		
 		
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		g.setColor(Color.white);
 		g.setFont(new Font("Arial", Font.BOLD, 30));
-		//g.drawString("Diamond eyes - Flutter ", 20, 702);
+		g.drawString("Diamond eyes - Flutter ", 20, 702);
 		g.drawString(titleName, 20, 702);
 		g.drawString(difficulty, 1190, 702);
 		
