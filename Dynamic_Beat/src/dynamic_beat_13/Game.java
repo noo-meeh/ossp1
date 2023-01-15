@@ -164,4 +164,9 @@ public class Game extends Thread{
 		gameMusic.close();
 		this.interrupt();
 	}
+	
+
+	public void dropNotes(String titleName) {
+		
+	}
 }
