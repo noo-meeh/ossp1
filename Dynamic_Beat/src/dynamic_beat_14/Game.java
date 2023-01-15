@@ -177,8 +177,8 @@ public class Game extends Thread{
 	public void dropNotes() {
 		Beat[] beats = {
 				new Beat(1000, "S"),
-				new Beat(1000, "D"),
-				new Beat(1000, "F"),
+				new Beat(2000, "D"),
+				new Beat(3000, "F"),
 		};
 		int i=0;
 		while(true) {
