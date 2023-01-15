@@ -39,6 +39,8 @@ public class Game extends Thread{
 		gameMusic = new Music(this.musicTitle, false);
 		gameMusic.start();
 		
+		dropNotes(titleName);
+		
 	}
 	
 	
@@ -51,10 +53,19 @@ public class Game extends Thread{
 		g.drawImage(noteRouteLineImage, 844, 30, null);
 		g.drawImage(noteRouteLineImage, 948, 30, null);
 		g.drawImage(noteRouteLineImage, 1052, 30, null);
-
+		
+		
+		
 		g.drawImage(gameInfoImage, 0, 660, null);
 		g.drawImage(judgementLineImage, 0,580, null);
 		
+		for(int i=0; i < noteList.size(); i++) {
+			
+			Note note = noteList.get(i);
+			note.screenDraw(g);
+			
+			
+		}
 		g.drawImage(noteRouteSImage, 228, 30, null);
 		g.drawImage(noteRouteDImage, 332, 30, null);
 		g.drawImage(noteRouteFImage, 436, 30, null);
@@ -167,6 +178,9 @@ public class Game extends Thread{
 	
 
 	public void dropNotes(String titleName) {
+		Note note = new Note(228, 0 , "short");
+		note.start();
+		noteList.add(note);
 		
 	}
 }
