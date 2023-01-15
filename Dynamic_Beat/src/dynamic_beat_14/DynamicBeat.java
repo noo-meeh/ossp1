@@ -438,10 +438,11 @@ public class DynamicBeat extends JFrame {
 		
 		backButton.setVisible(true);
 		isGameScreen = true;
-		setFocusable(true);
+		
 		
 		game = new Game(trackList.get(nowSelected).getTitleName(), difficulty, trackList.get(nowSelected).getGameMusic());
 		game.start();
+		setFocusable(true);
 	}
 	
 	public void backMain() {
