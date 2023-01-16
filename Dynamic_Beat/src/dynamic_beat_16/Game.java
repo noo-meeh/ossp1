@@ -23,8 +23,8 @@ public class Game extends Thread{
 	private Image noteRouteJImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
 	private Image noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
 	private Image noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
-	private Image blueFlareLImage = new ImageIcon(Main.class.getResource("../images/blueFlare.png")).getImage();
-	private Image judgeImage = new ImageIcon(Main.class.getResource("../images/judgeEarly.png")).getImage();
+	private Image blueFlareImage;
+	private Image judgeImage;
 	
 	private String titleName;
 	private String difficulty;
@@ -72,6 +72,10 @@ public class Game extends Thread{
 		for(int i=0; i < noteList.size(); i++) {
 			
 			Note note = noteList.get(i);
+			if(note.getY() > 620) {
+				judgeImage = new ImageIcon(Main.class.getResource("../images/judgeMiss.png")).getImage();
+			}
+			
 			if(!note.isProceeded()) {
 				noteList.remove(i);
 				i--;
@@ -79,7 +83,6 @@ public class Game extends Thread{
 			else {
 				note.screenDraw(g);
 			}
-			note.screenDraw(g);
 			
 			
 		}
@@ -103,8 +106,11 @@ public class Game extends Thread{
 		
 		g.setFont(new Font("Elephant", Font.BOLD, 30));
 		g.drawString("000000", 565, 702);
-		g.drawImage(blueFlareLImage, 320, 430, null);
-		g.drawImage(judgeImage, 460, 420, null);
+		
+		g.drawImage(blueFlareImage, 250, 150, null);
+		g.drawImage(judgeImage, 570, 290, null);
+		//g.drawImage(blueFlareImage, 320, 430, null);
+		//g.drawImage(judgeImage, 460, 420, null);
 		
 	}
 	public void pressS() {
@@ -420,10 +426,30 @@ public class Game extends Thread{
 		for(int i=0; i < noteList.size(); i++) {
 			Note note = noteList.get(i);
 			if(input.equals(note.getNoteType())) {
-				note.judge();
+				judgeEvent(note.judge());
+				//note.judge()
 				break;
 			}
 					
 		}
 	}
+	
+	public void judgeEvent(String judge) {
+        if (!judge.equals("None")) {
+        	blueFlareImage = new ImageIcon(Main.class.getResource("../images/blueFlare.png")).getImage();
+        }
+        if (judge.equals("Miss")) {
+            judgeImage = new ImageIcon(Main.class.getResource("../images/judgeMiss.png")).getImage();
+        } else if (judge.equals("Late")) {
+            judgeImage = new ImageIcon(Main.class.getResource("../images/judgeLate.png")).getImage();
+        } else if (judge.equals("Good")) {
+            judgeImage = new ImageIcon(Main.class.getResource("../images/judgeGood.png")).getImage();
+        } else if (judge.equals("Great")) {
+            judgeImage = new ImageIcon(Main.class.getResource("../images/judgeGreat.png")).getImage();
+        } else if (judge.equals("Perfect")) {
+            judgeImage = new ImageIcon(Main.class.getResource("../images/judgePerfect.png")).getImage();
+        } else if (judge.equals("Early")) {
+            judgeImage = new ImageIcon(Main.class.getResource("../images/judgeEarly.png")).getImage();
+        }
+    }
 }
