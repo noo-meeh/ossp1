@@ -70,6 +70,13 @@ public class Game extends Thread{
 		for(int i=0; i < noteList.size(); i++) {
 			
 			Note note = noteList.get(i);
+			if(!note.isProceeded()) {
+				noteList.remove(i);
+				i--;
+			}
+			else {
+				note.screenDraw(g);
+			}
 			note.screenDraw(g);
 			
 			

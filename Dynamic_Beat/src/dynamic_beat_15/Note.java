@@ -12,6 +12,10 @@ public class Note extends Thread {
 	private String noteType;
 	private boolean proceeded = true;
 	
+	public String getNoteType() {
+		return noteType;
+	}
+	
 	public boolean isProceeded() {
 		return proceeded;
 	}
@@ -83,5 +87,38 @@ public class Note extends Thread {
 		} catch(Exception e) {
 			System.err.println(e.getMessage());
 		}
+	}
+	
+	public void judge() {
+		if(y >= 613) {
+			System.out.println("Late");
+			close();
+		}
+		else if (y >= 600) {
+			System.out.println("Good");
+			close();
+		}
+		else if (y >= 587) {
+			System.out.println("Great");
+			close();
+		}
+		else if (y >= 573) {
+			System.out.println("Perfect");
+			close();
+		}
+		else if (y >= 565) {
+			System.out.println("Great");
+			close();
+		}
+		else if (y >= 550) {
+			System.out.println("Good");
+			close();
+		}
+		else if (y >= 535) {
+			System.out.println("Early");
+			close();
+		}
+		
+		
 	}
 }
