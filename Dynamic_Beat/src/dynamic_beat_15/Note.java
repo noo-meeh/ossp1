@@ -60,6 +60,10 @@ public class Note extends Thread {
 	
 	public void drop() {
 		y += Main.NOTE_SPEED;
+		if(y > 620) {
+			System.out.println("Miss");
+			close();
+		}
 	}
 	
 	@Override
