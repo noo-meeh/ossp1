@@ -10,6 +10,15 @@ public class Note extends Thread {
 	private Image noteBasicImage = new ImageIcon(Main.class.getResource("../images/noteBasic.png")).getImage();
 	private int x, y = 580 - (1000 / Main.SLEEP_TIME * Main.NOTE_SPEED) * Main.REACH_TIME;
 	private String noteType;
+	private boolean proceeded = true;
+	
+	public boolean isProceeded() {
+		return proceeded;
+	}
+	
+	public void close() {
+		proceeded = false;
+	}
 	
 	public Note(String noteType) {
 		if(noteType.equals("S")) {
@@ -58,6 +67,13 @@ public class Note extends Thread {
 		try {
 			while(true) {
 				drop();
+				if(proceeded) {
+					Thread.sleep(Main.SLEEP_TIME);
+				}
+				else {
+					interrupt();
+					break;
+				}
 				Thread.sleep(Main.SLEEP_TIME);
 			}
 		} catch(Exception e) {
