@@ -1,4 +1,4 @@
-package dynamic_beat_15;
+package dynamic_beat_16;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -24,6 +24,7 @@ public class Game extends Thread{
 	private Image noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
 	private Image noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
 	private Image blueFlareLImage = new ImageIcon(Main.class.getResource("../images/blueFlare.png")).getImage();
+	private Image judgeImage = new ImageIcon(Main.class.getResource("../images/judgeEarly.png")).getImage();
 	
 	private String titleName;
 	private String difficulty;
@@ -102,7 +103,8 @@ public class Game extends Thread{
 		
 		g.setFont(new Font("Elephant", Font.BOLD, 30));
 		g.drawString("000000", 565, 702);
-		g.drawImage(blueFlareLImage, 320, 370, null);
+		g.drawImage(blueFlareLImage, 320, 430, null);
+		g.drawImage(judgeImage, 460, 420, null);
 		
 	}
 	public void pressS() {
