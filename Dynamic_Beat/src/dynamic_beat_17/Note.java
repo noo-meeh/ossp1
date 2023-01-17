@@ -11,6 +11,7 @@ public class Note extends Thread {
 	private int x, y = 580 - (1000 / Main.SLEEP_TIME * Main.NOTE_SPEED) * Main.REACH_TIME;
 	private String noteType;
 	private boolean proceeded = true;
+
 	
 	public String getNoteType() {
 		return noteType;
@@ -25,6 +26,8 @@ public class Note extends Thread {
 	}
 	
 	public Note(String noteType) {
+		
+		
 		if(noteType.equals("S")) {
 			x = 228;
 		}

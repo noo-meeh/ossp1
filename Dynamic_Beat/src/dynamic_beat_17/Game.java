@@ -23,6 +23,7 @@ public class Game extends Thread{
 	private Image noteRouteJImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
 	private Image noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
 	private Image noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();
+	public Image scorebackgroundImage = new ImageIcon(Main.class.getResource("../images/scorebackground.png")).getImage();
 	private Image blueFlareImage;
 	private Image judgeImage;
 	
@@ -30,6 +31,8 @@ public class Game extends Thread{
 	private String difficulty;
 	private String musicTitle;
 	private Music gameMusic;
+	
+
 	
 	ArrayList<Note> noteList = new ArrayList<Note>();
 	
@@ -44,7 +47,7 @@ public class Game extends Thread{
 		
 	}
 	
-	int score = 0;
+	int sum = 0;
 	
 	int combo = 0;
 	public void screenDraw(Graphics2D g) {
@@ -76,7 +79,7 @@ public class Game extends Thread{
 			Note note = noteList.get(i);
 			if(note.getY() > 620) {
 				judgeImage = new ImageIcon(Main.class.getResource("../images/judgeMiss.png")).getImage();
-	            score = score - 10;
+	            sum = sum - 10;
 	            combo = 0;
 			}
 			
@@ -90,19 +93,13 @@ public class Game extends Thread{
 			
 			
 		}
-		
-		if(score<0) {
-			g.drawString(String.valueOf(0), 210,609);
-		}
-		else {
-			g.drawString(String.valueOf(score), 210,609);
-		}
+	
 		
 		
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		g.setColor(Color.white);
 		g.setFont(new Font("Arial", Font.BOLD, 30));
-		//g.drawString("Diamond eyes - Flutter ", 20, 702);
+
 		g.drawString(titleName, 20, 702);
 		g.drawString(difficulty, 1190, 702);
 		
@@ -116,18 +113,74 @@ public class Game extends Thread{
 		g.drawString("K", 889, 609);
 		g.drawString("L", 993, 609);
 		
-		g.setFont(new Font("Elephant", Font.BOLD, 30));
-		g.drawString(String.valueOf(score), 565, 702);
 		
+		g.setFont(new Font("Elephant", Font.BOLD, 30));
+		g.drawString(String.valueOf(sum), 565, 702);
+		
+		
+		
+		
+		
+
 		g.drawImage(blueFlareImage, 250, 150, null);
 		g.drawImage(judgeImage, 570, 290, null);
 		
 		g.setFont(new Font("Elephant", Font.BOLD, 30));
 		g.drawString(String.valueOf(combo), 630, 290);
-		//g.drawImage(blueFlareImage, 320, 430, null);
-		//g.drawImage(judgeImage, 460, 420, null);
+		
+		
+		String grade ="";
+		
+		if(combo == 0) {
+			grade ="F";
+		}
+		else if(0 < combo && combo <5) {
+			grade ="D";
+		}
+		else if(5 <= combo && combo <= 12) {
+			grade ="C";
+		}
+		else if(13 <= combo && combo <= 20) {
+			grade ="B";
+		}
+		else if(21 <= combo && combo <=29) {
+			grade ="A";
+		}
+		else if(30 <= combo) {
+			grade ="S";
+		}
+		
+		g.setFont(new Font("Elephant", Font.BOLD, 30));
+		g.drawString(grade, 720, 702);
+
 		
 	}
+	
+	public void resultFrame(Graphics2D g) {
+		
+
+		String grade=null;
+		int totalScore = sum;
+		if(totalScore > (300*100*0.9)) {
+			 grade = "S";
+		}else if(totalScore > (300*100*0.6)) {
+		     grade = "A";
+		}else if(totalScore > (300*100*0.4)) {
+			 grade = "B";
+		}else if(totalScore >= 0) {
+			 grade = "C";
+		}
+		g.drawImage(scorebackgroundImage, 253, 45, null);
+		
+		g.setFont(new Font("Arial", Font.BOLD, 100));
+		//g.setColor(Color.white);
+		//g.drawString(score.getScore(), 500, 290);
+		g.setColor(Color.pink);
+		g.drawString(grade, 600, 400);
+		
+	}
+	
+
 	public void pressS() {
 		judge("S");
 		noteRouteSImage = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
@@ -647,7 +700,8 @@ public class Game extends Thread{
 					new Beat(startTime+gap*336, "D"),
 					new Beat(startTime+gap*336, "Space"),
 					new Beat(startTime+gap*340, "S"),
-					new Beat(startTime+gap*340, "Space")
+					new Beat(startTime+gap*340, "Space"),
+					
 			};
 		}
 		else if(titleName.equals("Joakim Karud - Mighty Love") && difficulty.equals("Hard") ) {
@@ -1127,6 +1181,7 @@ public class Game extends Thread{
 			}
 			
 		}
+
 		
 	}
 	public void judge(String input) {
@@ -1140,6 +1195,7 @@ public class Game extends Thread{
 					
 		}
 	}
+
 	
 	
 	public void judgeEvent(String judge) {
@@ -1148,27 +1204,27 @@ public class Game extends Thread{
         }
         if (judge.equals("Miss")) {
             judgeImage = new ImageIcon(Main.class.getResource("../images/judgeMiss.png")).getImage();
-            score = score - 10;
+            sum = sum - 10;
             combo = 0;
         } else if (judge.equals("Late")) {
             judgeImage = new ImageIcon(Main.class.getResource("../images/judgeLate.png")).getImage();
-            score = score + 10;
+            sum = sum + 10;
             combo = combo + 1;
         } else if (judge.equals("Good")) {
             judgeImage = new ImageIcon(Main.class.getResource("../images/judgeGood.png")).getImage();
-            score = score + 20;
+            sum = sum + 20;
             combo = combo + 1;
         } else if (judge.equals("Great")) {
             judgeImage = new ImageIcon(Main.class.getResource("../images/judgeGreat.png")).getImage();
-            score = score + 30;
+            sum = sum + 30;
             combo = combo + 1;
         } else if (judge.equals("Perfect")) {
             judgeImage = new ImageIcon(Main.class.getResource("../images/judgePerfect.png")).getImage();
-            score = score + 40;
+            sum = sum + 40;
             combo = combo + 1;
         } else if (judge.equals("Early")) {
             judgeImage = new ImageIcon(Main.class.getResource("../images/judgeEarly.png")).getImage();
-            score = score + 10;
+            sum = sum + 10;
             combo = combo + 1;
         }
     }
