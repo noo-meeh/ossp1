@@ -32,7 +32,6 @@ public class Game extends Thread{
 	private String musicTitle;
 	private Music gameMusic;
 	
-
 	
 	ArrayList<Note> noteList = new ArrayList<Note>();
 	
@@ -158,7 +157,7 @@ public class Game extends Thread{
 	
 	public void resultFrame(Graphics2D g) {
 		
-
+		
 		String grade=null;
 		int totalScore = sum;
 		if(totalScore > (300*100*0.9)) {
@@ -173,8 +172,7 @@ public class Game extends Thread{
 		g.drawImage(scorebackgroundImage, 253, 45, null);
 		
 		g.setFont(new Font("Arial", Font.BOLD, 100));
-		//g.setColor(Color.white);
-		//g.drawString(score.getScore(), 500, 290);
+
 		g.setColor(Color.pink);
 		g.drawString(grade, 600, 400);
 		

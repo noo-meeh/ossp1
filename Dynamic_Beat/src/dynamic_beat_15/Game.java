@@ -101,8 +101,8 @@ public class Game extends Thread{
 		g.drawString("L", 993, 609);
 		
 		g.setFont(new Font("Elephant", Font.BOLD, 30));
-		g.drawString("000000", 565, 702);
-		g.drawImage(blueFlareLImage, 320, 370, null);
+		//g.drawString("000000", 565, 702);
+		//g.drawImage(blueFlareLImage, 320, 370, null);
 		
 	}
 	public void pressS() {
@@ -193,7 +193,7 @@ public class Game extends Thread{
 		Beat[] beats = null;
 		if(titleName.equals("Flutter") && difficulty.equals("Easy"))  {
 			int startTime = 4460 -Main.REACH_TIME * 1000;
-			int gap = 125;
+			int gap = 155;
 			beats = new Beat[] {
 					new Beat(startTime, "Space"),
 					new Beat(startTime+gap*1, "S"),
